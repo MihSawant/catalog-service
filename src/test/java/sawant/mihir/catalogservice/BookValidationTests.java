@@ -27,11 +27,9 @@ public class BookValidationTests {
     }
 
     @Test
-    public void wrongBookIsbnAndAuthor(){
-        var book = new Book("11", "test 1", "", 222);
+    public void wrongBookAuthor(){
+        var book = new Book("1111111111", "test 1", "", 222);
         var result = validator.validate(book);
-        assertThat(result).hasSize(2);
-        assertThat(result.iterator().next().getMessage().equals("ISBN code must follow proper format"));
-        assertThat(result.iterator().next().getMessage().equals("Author cannot be blank"));
-    }
+        assertThat(result).hasSize(1);
+        assertThat(result.iterator().next().getMessage()).isEqualTo("Author cannot be blank");}
 }
