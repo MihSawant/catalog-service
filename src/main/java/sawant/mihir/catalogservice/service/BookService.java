@@ -35,7 +35,8 @@ public class BookService {
     public Book editBook(String isbn, Book book){
         var originalBook = bookRepository.findByIsbn(isbn);
         if(originalBook.isPresent()){
-            Book newBook = new Book(originalBook.get().isbn(), book.title(), book.author(), book.price());
+            Book newBook = new Book(originalBook.get().id(), originalBook.get().isbn(), book.title(),
+                    book.author(), book.price(), originalBook.get().version());
             bookRepository.save(newBook);
             return bookRepository.findByIsbn(isbn).get();
         } else{

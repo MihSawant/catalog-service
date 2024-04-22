@@ -1,6 +1,34 @@
 spring:
   application:
     name: catalog-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+      fail-fast: true
+      retry:
+        max-attempts: 6
+        max-interval: 2000
+        multiplier: 1.1
+        initial-interval: 1000
+  datasource:
+    username: admin
+    password:
+    url: jdbc:postgresql://localhost:5432/catalogdb
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 2000
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+#  profiles:
+#    active: dataload
 server:
   port: 9001
   tomcat:
