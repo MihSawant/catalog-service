@@ -19,7 +19,7 @@ class CatalogServiceApplicationTests {
     private WebTestClient webTestClient;
     @Test
     void addingANewBook() {
-        var result = new Book("1234567890", "test", "abc", 900.20);
+        var result =  Book.of("1234567890", "test", "abc", 900.20);
 
         webTestClient
                 .post()

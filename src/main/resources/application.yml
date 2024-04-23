@@ -14,9 +14,12 @@ spring:
         max-interval: 2000
         multiplier: 1.1
         initial-interval: 1000
+  sql:
+    init:
+      mode: always
   datasource:
     username: admin
-    password:
+    password: admin
     url: jdbc:postgresql://localhost:5432/catalogdb
     hikari:
       maximum-pool-size: 5

@@ -38,7 +38,7 @@ public class BookControllerTestMVC {
 
     @Test
     public void checkAuthorValidaton() throws Exception {
-        var book = new Book("1234567890", "test", "", 100);
+        var book =  Book.of("1234567890", "test", "", 100);
 
         mockMvc.perform(put("/books"))
                 .andExpect(status().is4xxClientError());

@@ -21,14 +21,14 @@ public class BookValidationTests {
 
     @Test
     public void rightBook(){
-        var book = new Book("1234567899", "My Book 1", "Tom",1991.12);
+        var book =  Book.of("1234567899", "My Book 1", "Tom",1991.12);
         var result = validator.validate(book);
         assertThat(result).isEmpty();
     }
 
     @Test
     public void wrongBookAuthor(){
-        var book = new Book("1111111111", "test 1", "", 222);
+        var book =  Book.of("1111111111", "test 1", "", 222);
         var result = validator.validate(book);
         assertThat(result).hasSize(1);
         assertThat(result.iterator().next().getMessage()).isEqualTo("Author cannot be blank");}
