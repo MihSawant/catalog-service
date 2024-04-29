@@ -25,6 +25,7 @@ dependencies {
 
     implementation 'org.springframework.retry:spring-retry'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     runtimeOnly 'org.postgresql:postgresql'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
 }

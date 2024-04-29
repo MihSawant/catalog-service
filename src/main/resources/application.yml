@@ -20,7 +20,7 @@ spring:
   datasource:
     username: admin
     password: admin
-    url: jdbc:postgresql://localhost:5432/catalogdb
+    url: jdbc:tc:postgresql:14.4///
     hikari:
       maximum-pool-size: 5
       connection-timeout: 2000
