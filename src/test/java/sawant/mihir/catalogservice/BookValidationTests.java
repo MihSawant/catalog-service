@@ -6,10 +6,12 @@ import org.junit.jupiter.api.BeforeAll;
 
 import jakarta.validation.Validator;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 import sawant.mihir.catalogservice.entity.Book;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ActiveProfiles("integration")
 public class BookValidationTests {
 
     private static Validator validator;
