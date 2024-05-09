@@ -11,7 +11,6 @@ import sawant.mihir.catalogservice.entity.Book;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ActiveProfiles("integration")
 public class BookValidationTests {
 
     private static Validator validator;
