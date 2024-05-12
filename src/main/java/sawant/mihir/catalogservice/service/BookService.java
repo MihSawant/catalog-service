@@ -36,7 +36,7 @@ public class BookService {
         var originalBook = bookRepository.findBookByIsbn(isbn);
         if(originalBook.isPresent()){
             Book newBook = new Book(originalBook.get().id(), originalBook.get().createdDate(),
-                    originalBook.get().lastModifiedDate(),originalBook.get().isbn(), book.title(),
+                    originalBook.get().lastModifiedDate(),originalBook.get().isbn(), originalBook.get().publisher(),book.title(),
                     book.author(), book.price(), originalBook.get().version());
             bookRepository.save(newBook);
             return bookRepository.findBookByIsbn(isbn).get();

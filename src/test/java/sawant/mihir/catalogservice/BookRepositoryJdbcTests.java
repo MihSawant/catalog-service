@@ -31,7 +31,7 @@ public class BookRepositoryJdbcTests {
     @Test
     void newBookAndVerify(){
         var isbn = "9999999999";
-        var book = Book.of(isbn, "test", "abc", 300);
+        var book = Book.of(isbn, "test", "abc", 300, "oo");
         template.insert(book);
         Optional<Book> result = bookRepository.findBookByIsbn(isbn);
         assertThat(result).isPresent();

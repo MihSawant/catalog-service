@@ -24,17 +24,17 @@ public class DataLoader {
         bookRepository.deleteAll();
         List<Book> books = List.of(
                 Book.of("1234567890", "Never Lie: An addictive psychological thriller",
-                        "Freida McFadden", 3.99),
+                        "Freida McFadden", 3.99, "oriely"),
                 Book.of("1234567891", "The Women: A Novel",
-                        "Kristin Hannah", 14.99),
+                        "Kristin Hannah", 14.99, "oriely"),
                 Book.of("1234567892", "Playing It My Way: My Autobiography",
-                        "Sachin Tendulkar", 2.99),
+                        "Sachin Tendulkar", 2.99, "amz-kindle"),
                 Book.of("1234567893", "Atomic Habits: An Easy and Proven way to build " +
                                 "good habits and break bad ones",
-                        "James Clear", 13.99)
+                        "James Clear", 13.99, "manning")
 
         );
-        bookRepository.saveAll(books);
+        books.forEach(bookRepository::save);
         bookRepository.findAll().forEach(System.out::println);
     }
 }

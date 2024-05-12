@@ -30,6 +30,8 @@ public record Book(
                 )
         String isbn,
 
+        String publisher,
+
         @NotBlank(message = "Title cannot be blank")
 
         String title,
@@ -45,8 +47,8 @@ public record Book(
         int version
 ) {
     public static Book of(
-            String isbn, String title, String author ,double price
+            String isbn, String title, String author ,double price, String publisher
     ){
-        return new Book(null, null, null,  isbn, title, author, price,0);
+        return new Book(null, null, null, isbn, publisher, title, author, price, 0);
     }
 }
